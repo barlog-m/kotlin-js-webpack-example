@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Play');
+
+body, html {
+	height: 100%;
+}
+
+body {
+	font-family: 'Play', sans-serif;
+}

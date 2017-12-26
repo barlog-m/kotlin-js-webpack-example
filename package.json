@@ -1,0 +1,28 @@
+{
+	"private": true,
+	"name": "empty",
+	"version": "0.0.1",
+	"scripts": {
+		"start": "webpack-dev-server",
+		"build": "NODE_ENV=production webpack --progress --profile --bail --display-error-details",
+		"test": "jest",
+		"clean": "rimraf dist kotlin_build",
+		"rm": "rimraf dist kotlin_build node_modules",
+		"lint": "eslint src",
+		"source-map": "NODE_ENV=production webpack --devtool='source-map'"
+	},
+	"devDependencies": {
+		"@jetbrains/kotlin-webpack-plugin": "^1.2.1",
+		"css-loader": "^0.28.7",
+		"extract-text-webpack-plugin": "^3.0.2",
+		"file-loader": "^1.1.6",
+		"html-webpack-plugin": "^2.30.1",
+		"source-map-loader": "^0.2.3",
+		"style-loader": "^0.19.1",
+		"webpack": "^3.10.0",
+		"webpack-dev-server": "^2.9.7"
+	},
+	"dependencies": {
+		"kotlin": "^1.2.10"
+	}
+}
