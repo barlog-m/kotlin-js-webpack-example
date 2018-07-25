@@ -15,5 +15,3 @@ Entry point of application is JavaScript index.js. This is done for several reas
 I could not find how do this from Kotlin.
 
 Fake Kotlin main function is in entry in order to prevent "optimization" kotlinApp module by DCE (dead code elimination) tool 
-
-Work only with JDK 8, with JDK 9 it does not work. I could not find the reason. 
