@@ -9,7 +9,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const KotlinWebpackPlugin = require('@jetbrains/kotlin-webpack-plugin');
 
 const entry = {
-    bundle: './index.js'
+    bundle: 'kotlinApp'
 };
 
 const dependencies = () => Object.keys(JSON.parse(fs.readFileSync('package.json', {encoding: 'utf8'})).dependencies)
@@ -27,7 +27,7 @@ const config = {
         publicPath: '/'
     },
     resolve: {
-        modules: [path.join(__dirname, 'node_modules'), path.join(__dirname, 'kotlin_build')]
+        modules: ['kotlin_build', 'node_modules']
     },
 
     devtool: 'cheap-module-eval-source-map',
@@ -42,7 +42,7 @@ const config = {
             chunkFilename: '[id].css'
         }),
         new HtmlWebpackPlugin({
-            template: 'index.html'
+            template: '../resources/index.html'
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()

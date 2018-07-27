@@ -29,6 +29,7 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlinVer"
+    testCompile "org.jetbrains.kotlin:kotlin-test-js:$kotlinVer"
 }
 
 idea {

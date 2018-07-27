@@ -1,10 +1,16 @@
 package app
 
+import kotlin.js.console
 import kotlin.browser.document
 
-// Prevent dead code elimination optimization remove this module
+external fun require(module: String): dynamic
+
 fun main(args: Array<String>) {
-    val a = ::start
+    require("../resources/css/app.css")
+
+    val env = js("process.env.NODE_ENV")
+    console.log("env: $env")
+    start(env == "development")
 }
 
 @JsName("start")
