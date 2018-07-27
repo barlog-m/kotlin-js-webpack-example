@@ -37,12 +37,6 @@ const config = {
             src: path.join(__dirname, 'src'),
             verbose: true
         }),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-                MOCK: process.env.MOCK ? JSON.parse(process.env.MOCK) : false
-            }
-        }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].css',
             chunkFilename: '[id].css'
@@ -112,11 +106,6 @@ if (process.env.NODE_ENV === 'production') {
             optimize: true,
             verbose: true
         }),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-            }
-        }),
         new MiniCssExtractPlugin({
             filename: 'css/[hash].[name].css',
             chunkFilename: '[id].css'
@@ -129,8 +118,7 @@ if (process.env.NODE_ENV === 'production') {
                 collapseWhitespace: true
             }
         }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.optimize.OccurrenceOrderPlugin()
     ];
 
     config.optimization = {

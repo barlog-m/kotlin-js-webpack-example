@@ -7,6 +7,8 @@ Kotlin JavaScript with webpack minimal example
 
 It was not easy to write this example. I think the problem is in the documentation.
 
+`build.gradle` needed to enable project as a gradle project in IDEA
+
 Entry point of application is JavaScript index.js. This is done for several reasons.
 
 1. Import resources like css file.

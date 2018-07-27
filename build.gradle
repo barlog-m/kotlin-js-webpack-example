@@ -1,0 +1,50 @@
+buildscript {
+    ext {
+        kotlinVer = '1.2.51'
+        versionPluginVer = '0.20.0'
+    }
+
+    repositories {
+        jcenter()
+        maven { url 'https://plugins.gradle.org/m2/' }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVer"
+        // gradle dependencyUpdates -Drevision=release
+        classpath "com.github.ben-manes:gradle-versions-plugin:$versionPluginVer"
+    }
+}
+
+apply plugin: 'idea'
+apply plugin: 'kotlin2js'
+apply plugin: 'com.github.ben-manes.versions'
+
+group 'app'
+version '0.1-SNAPSHOT'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlinVer"
+}
+
+idea {
+    module {
+        sourceDirs += files("${projectDir}/src")
+    }
+}
+
+compileKotlin2Js {
+    kotlinOptions {
+        apiVersion = "1.2"
+        languageVersion = "1.2"
+    }
+}
+
+wrapper {
+    gradleVersion = '4.9'
+    distributionType = Wrapper.DistributionType.ALL
+}

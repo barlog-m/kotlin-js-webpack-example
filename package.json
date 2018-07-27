@@ -3,13 +3,13 @@
 	"name": "kotlin-js-webpack-example",
 	"version": "0.0.1",
 	"scripts": {
-		"start": "NODE_ENV=development webpack-dev-server --mode development",
-		"build": "NODE_ENV=production webpack --mode production --progress --profile --bail --display-error-details",
+		"start": "webpack-dev-server --mode development",
+		"build": "webpack --mode production --progress --profile --bail --display-error-details",
 		"test": "jest",
 		"clean": "rimraf dist kotlin_build",
 		"rm": "rimraf dist kotlin_build node_modules",
 		"lint": "eslint src",
-		"source-map": "NODE_ENV=production webpack --mode production --devtool='source-map'"
+		"source-map": "webpack --mode production --devtool='source-map'"
 	},
 	"devDependencies": {
 		"kotlin": "^1.2.51",
