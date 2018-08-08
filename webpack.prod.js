@@ -2,7 +2,6 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
 const path = require('path');
-const webpack = require('webpack');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -29,23 +28,25 @@ module.exports = merge(common, {
             filename: 'css/[name].[chunkhash].css',
         }),
         new HtmlWebpackPlugin({
-            template: './index.html',
+            template: './asset/index.html',
             hash: true,
             minify: {
                 removeComments: true,
                 collapseWhitespace: true
             }
-        }),
-        new webpack.optimize.OccurrenceOrderPlugin()
+        })
     ],
 
+    devtool: 'source-map',
+
     optimization: {
+        noEmitOnErrors: true,
         runtimeChunk: 'single',
         splitChunks: {
             cacheGroups: {
                 vendor: {
                     test: /[\\/]node_modules[\\/]/,
-                    name: 'vendors',
+                    name: 'vendor',
                     chunks: 'all'
                 }
             }

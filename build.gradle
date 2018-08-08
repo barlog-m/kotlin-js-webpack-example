@@ -34,7 +34,14 @@ dependencies {
 
 idea {
     module {
-        sourceDirs += files("${projectDir}/src")
+        sourceDirs += files("${projectDir}/src/main")
+        testSourceDirs += file("${projectDir}/src/test")
+        /*
+        resourceDirs += file("${projectDir}/some-extra-resource-dir")
+        testResourceDirs += file("${projectDir}/some-extra-test-resource-dir")
+        generatedSourceDirs += file("${projectDir}/kotlin_build")
+        excludeDirs += file("${projectDir}/some-extra-exclude-dir")
+        */
     }
 }
 

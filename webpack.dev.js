@@ -21,16 +21,16 @@ module.exports = merge(common, {
             verbose: true,
             librariesAutoLookup: true
         }),
-        new HtmlWebpackPlugin({
-            template: './index.html'
-        }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].css',
+        }),
+        new HtmlWebpackPlugin({
+            template: './asset/index.html'
         }),
         new webpack.HotModuleReplacementPlugin(),
     ],
 
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
 
     devServer: {
         port: 8080,

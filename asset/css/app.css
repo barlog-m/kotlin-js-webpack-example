@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Play');
 
+@import 'elements.css';
+
 body, html {
     height: 100%;
 }

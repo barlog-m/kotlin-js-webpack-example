@@ -3,8 +3,8 @@
 	"name": "kotlin-js-webpack-example",
 	"version": "0.0.1",
 	"scripts": {
-		"start": "webpack-dev-server --open --config webpack.dev.js",
-		"build": "webpack --progress --profile --bail --display-error-details --config webpack.prod.js",
+		"start": "webpack-dev-server --progress --watch-poll --config webpack.dev.js",
+		"build": "webpack --progress --profile --bail --display-reasons --display-error-details --config webpack.prod.js",
 		"test": "jest",
 		"clean": "rimraf dist kotlin_build",
 		"rm": "rimraf dist kotlin_build node_modules",

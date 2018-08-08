@@ -1,12 +1,9 @@
 const path = require('path');
-const webpack = require('webpack');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: 'kotlinApp',
-
-    context: path.join(__dirname, 'src'),
 
     output: {
         path: path.join(__dirname, 'dist'),
@@ -17,16 +14,11 @@ module.exports = {
         modules: ['kotlin_build', 'node_modules']
     },
 
-    plugins: [
-        new webpack.NoEmitOnErrorsPlugin()
-    ],
-
     module: {
         rules: [
             {
                 test: /\.js$/,
-                include: path.resolve(__dirname, '../kotlin_build'),
-                exclude: [/kotlin\.js$/],
+                include: path.resolve(__dirname, 'kotlin_build'),
                 use: ['source-map-loader'],
                 enforce: 'pre',
             },
