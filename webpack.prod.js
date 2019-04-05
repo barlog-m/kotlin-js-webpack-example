@@ -19,7 +19,7 @@ module.exports = merge(common, {
     plugins: [
         new CleanWebpackPlugin(['dist', 'kotlin_build']),
         new KotlinWebpackPlugin({
-            src: path.join(__dirname, 'src'),
+            src: path.join(__dirname, 'main'),
             optimize: true,
             verbose: true,
             librariesAutoLookup: true
