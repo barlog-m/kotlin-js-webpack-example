@@ -7,4 +7,4 @@ Kotlin JavaScript with webpack minimal example
 
 `build.gradle.kts` needed to enable project as a gradle project in IDEA
 
-For build and other use coomands from
+For build and other use coomands from npm
